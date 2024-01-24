@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "HankenGrotesk";
+  font-display: auto; /* control how a font is displayed or rendered while it is being downloaded. */
+  font-weight: 100 900;
+  src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf) 
+       format("truetype"); /* should be replaced with woff format if deployed for compression */
+}
+
+:root {
+  /* Colors */
+
+  /* primary */
+  --clr-primary-light-red: hsl(0, 100%, 67%);
+  --clr-primary-orange-yellow: hsl(39, 100%, 56%);
+  --clr-primary-green-teal : hsl(39, 100%, 56%);
+  --clr-primary-cobalt-blue: hsl(234, 85%, 45%);
+
+  /* gradients */
+  --gradient-bg-slate-blue: hsl(252, 100%, 67%);
+  --gradient-bg-royal-blue: hsl(241, 81%, 54%);
+  /* gradients for the circle */
+  --gradient-violet-blue: hsla(256, 72%, 46%, 1);
+  --gradient-persian-blue: 241, 72%, 46%, 0;
+
+  --gradient-primary: linear-gradient(
+    var(--gradient-bg-slate-blue),
+    var(--gradient-bg-royal-blue));
+  --gradient-secondary-transparent: linear-gradient(
+    var(--gradient-violet-blue),
+    hsl(var(--gradient-persian-blue), 0));
+
+  /* neutral */
+  --neutral-white: hsl(0, 0%, 100%);
+  --netraul-pale-blue: hsl(221, 100%, 96%);
+  --neutral-light-lavender: hsl(241, 100%, 89%);
+  --neutral-dark-gray-blue: hsl(224, 30%, 27%);
+
+  /* accent colors */
+  --accent-color-1: 0, 100%, 67%;
+  --accent-color-2: 39, 100%, 56%;
+  --accent-color-3: 166, 100%, 37%;
+  --accent-color-4: 234, 85%, 45%;
+
+
+  /* Fonts */
+  --font-family-default: "HankenGrotesk";
+
+  --font-size-400: 1.125rem; /* 18px */
+  --font-size-500: 1.25rem; /* 20px */
+  --font-size-600: 1.5rem; /* 24px */
+  --font-size-700: 1.75rem; /* 28px */
+  --font-size-800: 2rem; /* 32px */
+  --font-size-900: 5rem; /* 80px */
+
+  --font-weight-regular: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  color: var(--neutral-dark-gray-blue);
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-400);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* table, laptop, desktop design */
+@media only screen and (min-width: 600px) {
+  body {
+    display: grid; /* center the card */
+    place-items: center;
+    min-height: 100vh;
+  }
+}
+
+.section-title {
+  font-size: var(--font-size-600);
+  font-weight: var(--font-weight-bold);
+}
+
+.button {
+  color: var(--neutral-white);
+  background: var(--gradient-primary);
+  border: 0;
+  border-radius: 100vw;
+  cursor: pointer;
+  line-height: 1;
+  padding: 1rem 2rem;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--gradient-bg-slate-blue);
+}
