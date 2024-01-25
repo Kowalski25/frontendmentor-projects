@@ -18,9 +18,10 @@
   /* gradients */
   --gradient-bg-slate-blue: hsl(252, 100%, 67%);
   --gradient-bg-royal-blue: hsl(241, 81%, 54%);
+
   /* gradients for the circle */
   --gradient-violet-blue: hsla(256, 72%, 46%, 1);
-  --gradient-persian-blue: 241, 72%, 46%, 0;
+  --gradient-persian-blue: 241, 72%, 46%;
 
   --gradient-primary: linear-gradient(
     var(--gradient-bg-slate-blue),
@@ -30,10 +31,10 @@
     hsl(var(--gradient-persian-blue), 0));
 
   /* neutral */
-  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-white: 0, 0%, 100%;
   --netraul-pale-blue: hsl(221, 100%, 96%);
   --neutral-light-lavender: hsl(241, 100%, 89%);
-  --neutral-dark-gray-blue: hsl(224, 30%, 27%);
+  --neutral-dark-gray-blue: 224, 30%, 27%; /* only used the color value but not wrapped in hsl for better control of transparency for multiple elements */
 
   /* accent colors */
   --accent-color-1: 0, 100%, 67%;
@@ -64,7 +65,7 @@
 }
 
 * {
-  font: inherit;
+  font: inherit; /* resets elements font properties values to default (16px, normal font weight, etc.) */
   margin: 0;
 }
 
@@ -103,7 +104,7 @@ body {
 }
 
 .button {
-  color: var(--neutral-white);
+  color: hsl(var(--neutral-white));
   background: var(--gradient-primary);
   border: 0;
   border-radius: 100vw;
@@ -115,4 +116,42 @@ body {
 .button:hover,
 .button:focus-visible {
   background: var(--gradient-bg-slate-blue);
+}
+
+.result-summary {
+  --border-radius: 2rem; /* local variable to be used for the parent card (result-summary) and the results section to apply border radius to it. */
+  --padding: 2.5rem; /* these were declared as local variables since these are only for the parent and 2 sections */
+  display: grid; /* to have 2 columns on larger screen */
+  max-width: 45rem;
+}
+
+
+/* tablet, laptop, desktop, always remember the first layout above is for mobile design first! */
+@media only screen and (min-width: 600px) {
+  .result-summary {
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--border-radius); /* declared here since mobile design doesnt have a border radius */
+    box-shadow: .5rem 1rem 3rem
+      hsl(var(--neutral-dark-gray-blue), .2);
+    overflow: hidden;
+  }
+}
+
+.results,
+.summary {
+  padding: var(--padding);
+}
+
+.results {
+  background: var(--gradient-primary); 
+  border-radius: 
+    0 0 var(--border-radius) var(--border-radius); /* to apply a border-radius on the right side of the result section */
+  color: hsl(var(--neutral-white), 0.7);
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .results {
+    border-radius: var(--border-radius);
+  }
 }
