@@ -16,11 +16,10 @@
   </head>
   <body>
     <div>
-      <!-- main container -->
-
+      
       <div class="result-summary">
-        <!-- result summary card-->
-        <div class="results large grid-flow">
+  
+        <div class="results grid-flow" data-spacing="large">
           <!-- left section -->
           <h1 class="section-title">Your Result</h1>
 
@@ -36,7 +35,7 @@
           </div>
         </div>
 
-        <div class="summary large">
+        <div class="summary grid-flow" data-spacing="large">
           <!-- right section -->
           <h2 class="section-title">
             <!-- used h2 for semantics since the "Your Result" is the main title. (hierarchy) -->
@@ -44,7 +43,7 @@
           </h2>
 
           <div class="grid-flow">
-            <div class="summary-item accent-1">
+            <div class="summary-item" data-item-type="accent-1">
               <div class="flex-group">
                 <svg
                   class="summary-icon"
@@ -62,10 +61,10 @@
                 <h3 class="summary-item-title">Reaction</h3>
               </div>
 
-              <p class="summary-title"><span>80</span> / 100</p>
+              <p class="summary-score"><span>80</span> / 100</p>
             </div>
 
-            <div class="summary-item accent-2">
+            <div class="summary-item" data-item-type="accent-2">
               <div class="flex-group">
                 <svg
                   class="summary-icon"
@@ -93,10 +92,10 @@
                 <h3 class="summary-item-title">Memory</h3>
               </div>
 
-              <p class="summary-title"><span>92</span> / 100</p>
+              <p class="summary-score"><span>92</span> / 100</p>
             </div>
 
-            <div class="summary-item accent-3">
+            <div class="summary-item" data-item-type="accent-3">
               <div class="flex-group">
                 <svg
                   class="summary-icon"
@@ -114,10 +113,10 @@
                 <h3 class="summary-item-title">Verbal</h3>
               </div>
 
-              <p class="summary-title"><span>61</span> / 100</p>
+              <p class="summary-score"><span>61</span> / 100</p>
             </div>
 
-            <div class="summary-item accent-4">
+            <div class="summary-item" data-item-type="accent-4">
               <div class="flex-group">
                 <svg
                   class="summary-icon"
@@ -140,12 +139,13 @@
                 <h3 class="summary-item-title">Visual</h3>
               </div>
 
-              <p class="summary-title"><span>72</span> / 100</p>
+              <p class="summary-score"><span>72</span> / 100</p>
             </div>
 
-            <button class="button">Continue</button>
           </div>
+          <button class="button">Continue</button>
         </div>
+
       </div>
     </div>
   </body>
