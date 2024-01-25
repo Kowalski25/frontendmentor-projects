@@ -1,6 +1,6 @@
 @font-face {
   font-family: "HankenGrotesk";
-  font-display: auto; /* control how a font is displayed or rendered while it is being downloaded. */
+  font-display: swap; /* control how a font is displayed or rendered while it is being downloaded. */
   font-weight: 100 900;
   src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf) 
        format("truetype"); /* should be replaced with woff format if deployed for compression */
@@ -34,7 +34,7 @@
   --neutral-white: 0, 0%, 100%;
   --netraul-pale-blue: hsl(221, 100%, 96%);
   --neutral-light-lavender: hsl(241, 100%, 89%);
-  --neutral-dark-gray-blue: 224, 30%, 27%; /* only used the color value but not wrapped in hsl for better control of transparency for multiple elements */
+  --neutral-dark-gray-blue: 224, 30%, 27%; /* only used the color value but not wrapped in hsl for better control of transparency */
 
   /* accent colors */
   --accent-color-1: 0, 100%, 67%;
@@ -103,9 +103,26 @@ body {
   font-weight: var(--font-weight-bold);
 }
 
+.flex-group {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.grid-flow {
+  display: grid;
+  align-content: start; /* set to start to avoid from stretching the items. (stretch is the default value) */
+  gap: 1rem;
+}
+
+.grid-flow[data-spacing="large"] {
+  gap: 2rem;
+}
+
 .button {
   color: hsl(var(--neutral-white));
-  background: var(--gradient-primary);
+  background: hsl(var(--neutral-dark-gray-blue));
   border: 0;
   border-radius: 100vw;
   cursor: pointer;
@@ -115,12 +132,12 @@ body {
 
 .button:hover,
 .button:focus-visible {
-  background: var(--gradient-bg-slate-blue);
+  background: var(--gradient-primary);
 }
 
 .result-summary {
   --border-radius: 2rem; /* local variable to be used for the parent card (result-summary) and the results section to apply border radius to it. */
-  --padding: 2.5rem; /* these were declared as local variables since these are only for the parent and 2 sections */
+  --padding: 2.5rem; /* these were declared as local variables since these properties are only for the parent and 2 sections */
   display: grid; /* to have 2 columns on larger screen */
   max-width: 45rem;
 }
@@ -133,13 +150,9 @@ body {
     border-radius: var(--border-radius); /* declared here since mobile design doesnt have a border radius */
     box-shadow: .5rem 1rem 3rem
       hsl(var(--neutral-dark-gray-blue), .2);
+    margin-inline: 1rem;
     overflow: hidden;
   }
-}
-
-.results,
-.summary {
-  padding: var(--padding);
 }
 
 .results {
@@ -147,6 +160,7 @@ body {
   border-radius: 
     0 0 var(--border-radius) var(--border-radius); /* to apply a border-radius on the right side of the result section */
   color: hsl(var(--neutral-white), 0.7);
+  padding: var(--padding) calc(var(--padding) * 1.5);
   text-align: center;
 }
 
@@ -154,4 +168,75 @@ body {
   .results {
     border-radius: var(--border-radius);
   }
+}
+
+.result-score {
+  background: var(--gradient-secondary-transparent);
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-content: center;
+  margin-inline: auto;
+  width: 12rem;
+}
+
+.result-score span {
+  color: hsl(var(--neutral-white));
+  display: block;
+  font-size: calc(var(--font-size-900) - 1rem);
+  font-weight: var(--font-weight-black);
+  line-height: 1; /* removed default value of 1.2 instead of using margin or padding for spacing them out */
+}
+
+.result-rank {
+  color: hsl(var(--neutral-white));
+  font-size: var(--font-size-700);
+  font-weight: var(--font-weight-bold);
+}
+
+.summary {
+  padding: var(--padding);
+}
+
+.summary-item {
+  background-color: hsl(var(--item-color), 0.1);
+  border-radius: .5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.summary-item svg {
+  stroke: hsl(var(--item-color));
+}
+
+.summary-item-title {
+  color: hsl(var(--item-color));
+  font-weight: var(--font-weight-bold);
+}
+
+.summary-item[data-item-type="accent-1"] {
+  --item-color: var(--accent-color-1);
+}
+
+.summary-item[data-item-type="accent-2"] {
+  --item-color: var(--accent-color-2);
+}
+
+.summary-item[data-item-type="accent-3"] {
+  --item-color: var(--accent-color-3);
+}
+
+.summary-item[data-item-type="accent-4"] {
+  --item-color: var(--accent-color-4);
+}
+
+.summary-score {
+  color: hsl(var(--neutral-dark-gray-blue), .5);
+  font-weight: var(--font-weight-black);
+}
+
+.summary-score span {
+  color: hsl(var(--neutral-dark-gray-blue));
 }
