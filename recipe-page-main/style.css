@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'YoungSerif';
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/assets/fonts/young-serif/YoungSerif-Regular.ttf')
+       format('truetype');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/assets/fonts/outfit/Outfit-VariableFont_wght.ttf')
+       format('truetype');
+}
+
+:root {
+  --clr-primary-hsl: 14, 45%, 36%; /* nutmeg */
+  --clr-secondary-hsl: 332, 51%, 32%; /* dark raspberry */
+
+  --clr-neutral-hsl-100: 0, 0%, 100%; /* white */
+  --clr-neutral-hsl-200: 330, 100%, 98%; /* rose white */
+  --clr-neutral-hsl-300: 30, 54%, 90%; /* eggshell */
+  --clr-neutral-hsl-400: 30, 18%, 87%; /* light gray */
+  --clr-neutral-hsl-600: 30, 10%, 34%; /* wenge brown */
+  --clr-neutral-hsl-700: 24, 5%, 18%; /* dark charcoal */
+
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+  --clr-neutral-400: hsl(var(--clr-neutral-hsl-400));
+  --clr-neutral-600: hsl(var(--clr-neutral-hsl-600));
+  --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+
+  
+  --font-family-title: 'YoungSerif', serif;
+  --font-family-content: 'Outfit', sans-serif;
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 1.75rem;
+  --fs-900: 2rem;
+  --fs-1000: 5rem;
+
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  color: var(--clr-neutral-600);
+  font-size: var(--fs-400);
+  font-family: var(--font-family-content);
+}
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
