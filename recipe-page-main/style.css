@@ -46,7 +46,7 @@
   --fs-700: 1.5rem;
   --fs-800: 1.75rem;
   --fs-900: 2rem;
-  --fs-1000: 5rem;
+  --fs-1000: 4rem;
 
 }
 
@@ -54,28 +54,143 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  font: inherit;
-  margin: 0;
 }
 
-img {
+* {
+  margin: 0
+}
+
+/* avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+img, picture, svg, video, canvas {
   display: block;
   max-width: 100%;
 }
 
+ul, ol {
+  padding: 0;
+}
+
+ul ::marker {
+  font-size: calc(var(--fs-400) - 4px);
+}
+
+/* create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
+
+table {
+  text-align: left;
+  width: 100%;
+}
+
 body {
+  background-color: var(--clr-neutral-300);
   color: var(--clr-neutral-600);
   font-size: var(--fs-400);
   font-family: var(--font-family-content);
+
+  /* Typographic tweaks! */
+  line-height: 1.5; /* Add accessible line-height */
+  -webkit-font-smoothing: antialiased; /* Improve text rendering */
 }
 
+.recipe-page {
+  background-color: var(--clr-neutral-100);
+  max-width: 46rem;
+}
 
+section {
+  width: 90%;
+  margin-inline: auto;
+}
 
+section {
+  padding: 2rem 0;
+}
 
+.section-title {
+  color: hsl(var(--clr-primary-hsl));
+  font-family: var(--font-family-title);
+}
 
+@media only screen and (min-width: 600px) {
+  body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 5rem 0;
+  }
 
+  .recipe-page {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
 
+  .recipe-img {
+    width: 90%;
+    margin: 2rem auto 0;
+  }
+  
+  .recipe-img img {
+    border-radius: .5rem;
+  }
+  
+  .recipe-description .section-title {
+    font-size: calc(var(--fs-1000) - 1.5rem);
+  }
+}
 
+.recipe-description h1 {
+  color: var(--clr-neutral-700);
+  font-size: calc(var(--fs-1000) - 1.75rem);
+  padding-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.recipe-preparation {
+  background-color: hsl(var(--clr-secondary-hsl), .1);
+  border-radius: .5rem;
+  /* margin: 0 2rem; */
+  padding: 1.5rem; 
+}
+
+.recipe-preparation h2 {
+  color: hsl(var(--clr-secondary-hsl));
+  font-size: var(--fs-600);
+}
+
+.recipe-preparation ul, 
+.recipe-ingredients ul,
+.recipe-instructions ol {
+  margin: 0 1.25rem;
+}
+
+.recipe-preparation ::marker {
+  color: hsl(var(--clr-secondary-hsl));
+}
+
+ section li {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.recipe-preparation span {
+  font-weight: var(--fw-bold);
+}
+
+.recipe-ingredients,
+.recipe-instructions {
+  border-bottom: 1px solid var(--clr-neutral-400);
+}
 
 
 
