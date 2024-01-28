@@ -88,6 +88,11 @@ table {
   width: 100%;
 }
 
+table th,
+table tr {
+  width: 50%;
+}
+
 body {
   background-color: var(--clr-neutral-300);
   color: var(--clr-neutral-600);
@@ -105,7 +110,7 @@ body {
 }
 
 section {
-  width: calc(100% - 4rem);
+  width: calc(100% - 4rem); /* leave a gap of 2rems each side */
   margin-inline: auto;
   padding: 2rem 0;
 }
@@ -116,12 +121,13 @@ section {
 }
 
 ol, ul {
-  margin: 0 1.375rem;
+  margin: .5rem 1.375rem 0;
 }
 
 ul ::marker {
   font-size: calc(var(--fs-400) - 4px);
 }
+
 
 @media only screen and (min-width: 600px) {
   body {
@@ -197,5 +203,25 @@ section li {
   font-weight: var(--fw-bold);
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.recipe-nutrition p {
+  padding: 1rem 0;
+}
+
+.recipe-nutrition table {
+  border-collapse: collapse; /* to apply the border bottom only */
+}
+
+.recipe-nutrition tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--clr-neutral-400);
+}
+
+.recipe-nutrition th {
+  font-weight: var(--fw-regular);
+  padding: .5rem 0;
+  text-indent: 2rem;
+}
+
+.recipe-nutrition td {
+  color: hsl(var(--clr-primary-hsl));
+  font-weight: var(--fw-bold);
+}
