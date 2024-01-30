@@ -5,12 +5,7 @@
   --clr-primary-hsl-500: 244, 38%, 16%; /* card background, dark desaturated blue */
 
   --clr-accent-hsl-1: 277, 64%, 61%; /* accent, soft violet */
-
   --clr-neutral-hsl-400: 0, 0%, 100%; /* main headings and stats, white */
-  /*
-    --Slightly transparent white (main paragraph) - use clr neutral 400 with transparency of 0.75
-    --Slightly transparent white (stat headings) - use clr neutral 400 with transparency of 0.6
-  */
 
   --font-family-primary: "Inter", sans-serif;
   --font-family-secondary: "Lexend Deca", sans-serif;
@@ -28,7 +23,6 @@
   --fw-black: 800;
 }
 
-
 *,
 ::before,
 ::after {
@@ -37,44 +31,6 @@
 
 * {
   margin: 0;
-}
-
-body {
-  color: hsl(var(--clr-neutral-hsl-400));
-  font-family: var(--font-family-primary); 
-  -webkit-font-smoothing: antialiased; /* improve text rendering */
-}
-
-@media only screen and (min-width: 600px) {
-  body {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-  }
-
-  main {
-    padding: 5rem 0;
-    width: 80%;
-  }
-
-  .stats-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 60rem;
-  }
-
-  .stats-img {
-    grid-area: 1 / 2 / 1 / 3;
-  }
-
-  .stats-content {
-    grid-area: 1 / 1 / 1 / 2;
-  }
-
-  .stats-data {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 img, picture, canvas, svg, video {
@@ -100,54 +56,22 @@ ul {
   padding: 0;
 }
 
-main {
+body {
   background: hsl(var(--clr-primary-hsl-400));
-  display: grid;
-  place-items: center;
-  padding: 5rem 0;
-  margin-inline: auto;
-  text-align: center;
-}
-
-.stats-card {
-  border-radius: .5rem;
-  max-width: 90%;
-  margin-inline: auto;
-  overflow: hidden;
-}
-
-.stats-content {
-  background: hsl(var(--clr-primary-hsl-500));
-  padding: 2.5rem 1.5rem 0;
-}
-
-.stats-content h1 {
   color: hsl(var(--clr-neutral-hsl-400));
-  font-size: var(--fs-800);
-  margin-bottom: 1rem;
+  min-height: 100dvh;
+  font-family: var(--font-family-primary); 
+  -webkit-font-smoothing: antialiased; /* improve text rendering */
 }
 
-.stats-content span {
-  color: hsl(var(--clr-accent-hsl-1));
-}
 
-.stats-content-paragraph {
-  color: hsl(var(--clr-neutral-hsl-400), 0.75);
-  font-family: var(--font-family-secondary);
-  font-weight: var(--fw-light);
-  line-height: 2;
-  margin-bottom: 2.5rem;
-}
 
-.stats-data h2 {
-  margin-bottom: .5rem;
-}
 
-.stats-data p {
-  color: hsl(var(--clr-neutral-hsl-400), 0.6);
-  font-family: var(--font-family-secondary);
-  font-size: calc(var(--fs-400) - 3px);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding-bottom: 2rem;
-}
+
+
+
+
+/* @media only screen and (min-width: 600px) {
+
+} */
+
