@@ -59,19 +59,115 @@ ul {
 body {
   background: hsl(var(--clr-primary-hsl-400));
   color: hsl(var(--clr-neutral-hsl-400));
+  display: grid;
+  place-items: center;
   min-height: 100dvh;
   font-family: var(--font-family-primary); 
   -webkit-font-smoothing: antialiased; /* improve text rendering */
 }
 
+main {
+  background-color: hsl(var(--clr-primary-hsl-500));
+  border-radius: .5rem;
+  max-width: calc(90% - 1rem);
+  margin: 4rem 0;
+  overflow: hidden;
+}
 
+.stats-img {
+  background: url('./images/image-header-mobile.jpg') no-repeat center/cover, hsl(var(--clr-accent-hsl-1), .85);
+  background-blend-mode: multiply;
+  height: 240px;
+  border-radius: .5rem .5rem 0 0;
+}
 
+.stats-content {
+  background: var(--clr-primary-hsl-500);
+  border-radius: 0 0 .5rem .5rem;
+  padding: 2.5rem 1.75rem 2rem;
+  text-align: center;
+}
 
+.stats-content h1 {
+  font-size: var(--fs-800);
+  margin-bottom: 1rem;
+}
 
+.stats-content span {
+  color: hsl(var(--clr-accent-hsl-1));
+}
 
+.stats-content .leading {
+  color: hsl(var(--clr-neutral-hsl-400), 0.75);
+  font-family: var(--font-family-secondary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-light);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
 
+.stats-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-/* @media only screen and (min-width: 600px) {
+.stats-content li h2 {
+  font-size: var(--fs-700);
+  margin-bottom: .25rem;
+}
 
-} */
+.stats-content li p {
+  color: hsl(var(--clr-neutral-hsl-400), .5);
+  font-family: var(--font-family-secondary);
+  font-size: calc(var(--fs-400) - 3px);
+  font-weight: var(--fw-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
+@media screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .stats-img {
+    background: url('./images/image-header-desktop.jpg') no-repeat center/cover, hsl(var(--clr-accent-hsl-1), 0.85);
+    background-blend-mode: multiply;
+    border-radius: 0 .5rem .5rem 0;
+    min-width: 50%;
+    height: auto;
+  }
+
+  .stats-content {
+    text-align: left;
+  }
+
+  .stats-content .leading {
+    margin-bottom: 4rem;
+  }
+
+  .stats-content ul {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* .stats-img {
+    height: 460px;
+  }
+   */
+  .stats-content {
+    padding: 4rem 8rem 3.5rem 3.5rem;
+  }
+
+  .stats-content h1 {
+    font-size: var(--fs-900);
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-content ul {
+    justify-content: space-between;
+  }
+}
