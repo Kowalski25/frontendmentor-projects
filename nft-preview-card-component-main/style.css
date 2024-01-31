@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Outfit";
+  font-weight: 100 900;
+  font-display: swap;
+
+  src: url('./font/Outfit-VariableFont_wght.ttf')
+       format('truetype');
+}
+
+
+:root {
+  --clr-primary-soft-blue: hsl(215, 51%, 70%);
+  --clr-primary-cyan: hsl(178, 100%, 50%);
+
+  --clr-neutral-400: hsl(0, 0, 100%);
+  --clr-neutral-500: hsl(217, 54%, 11%); /* main bg */
+  --clr-neutral-600: hsl(216, 50%, 16%); /* card bg */
+  --clr-neutral-700: hsl(215, 32%, 27%); /* line */
+
+  --font-family-default: "Outfit", sans-serif;
+
+  --fs-400: 1.125rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem; 
+  --fs-700: 1.75rem;
+  --fs-800: 2rem;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 600;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+img, svg, video, picture, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word; 
+}
+
+body {
+  font-family: var(--font-family-default);
+  font-size: var(--fs-400);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Improve text rendering */
+}
