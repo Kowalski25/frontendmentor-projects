@@ -7,12 +7,11 @@
        format('truetype');
 }
 
-
 :root {
   --clr-primary-soft-blue: hsl(215, 51%, 70%);
   --clr-primary-cyan: hsl(178, 100%, 50%);
 
-  --clr-neutral-400: hsl(0, 0, 100%);
+  --clr-neutral-400: hsl(0, 0%, 100%);
   --clr-neutral-500: hsl(217, 54%, 11%); /* main bg */
   --clr-neutral-600: hsl(216, 50%, 16%); /* card bg */
   --clr-neutral-700: hsl(215, 32%, 27%); /* line */
@@ -55,8 +54,129 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 body {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  background: var(--clr-neutral-500);
   font-family: var(--font-family-default);
   font-size: var(--fs-400);
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased; /* Improve text rendering */
+}
+
+.flex {
+  display: flex;
+}
+
+.nft-preview-card {
+  background-color: var(--clr-neutral-600);
+  border-radius: .75rem;
+  max-width: 20.5rem;
+  padding: 1.5rem;
+}
+
+.nft-preview-img {
+  border-radius: .5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.nft-preview-card .overlay {
+  background: hsl(178, 100%, 50%, .5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.nft-preview-card .overlay:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+h1, .leading {
+  margin-bottom: 1.25rem;
+}
+
+.nft-preview-card h1 {
+  color: var(--clr-neutral-400);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-medium);
+  transition: color 200ms ease-in-out;
+}
+
+.nft-preview-card .leading {
+  color: var(--clr-primary-soft-blue);
+  font-size: calc(var(--fs-400) - 1px);
+  font-weight: var(--fw-light);
+  line-height: 1.5;
+}
+
+.nft-preview-card h1:hover,
+footer span:hover {
+  color: var(--clr-primary-cyan);
+  cursor: pointer;
+}
+
+.flex.wrapper {
+  border-bottom: 1px solid var(--clr-neutral-700);
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  width: 100%;
+}
+
+.flex.group {
+  align-items: center;
+  gap: .5rem;
+}
+
+.flex.group p {
+  color: var(--clr-primary-soft-blue);
+  font-size: calc(var(--fs-400) - 3px);
+  font-weight: var(--fw-light);
+}
+
+.flex.group .accent {
+  color: var(--clr-primary-cyan);
+  font-weight: var(--fw-medium);
+}
+
+footer {
+  margin-top: 1.25rem;
+}
+
+footer.flex {
+  align-items: center;
+  gap: 1rem;
+}
+
+footer img {
+  border: 1px solid var(--clr-neutral-400);
+  border-radius: 100rem;
+  width: 2rem;
+}
+
+footer p {
+  color: var(--clr-primary-soft-blue);
+  font-size: calc(var(--fs-400) - 3px);
+}
+
+footer span {
+  color: var(--clr-neutral-400);
+  transition: color 200ms ease-in-out;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+  }
 }
