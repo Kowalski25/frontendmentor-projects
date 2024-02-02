@@ -16,7 +16,6 @@
   --fs-default: 0.9375rem;
 }
 
-
 *,
 ::before,
 ::after {
@@ -40,7 +39,38 @@ img {
 body {
   background: var(--clr-bg);
   font-family: var(--font-family-default);
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased; /* improve text rendering */
+  display: grid;
+  place-items: center;
+  height: 100dvh;
 }
 
+.qr-code-card {
+  background: var(--clr-white);
+  border-radius: 1rem;
+  box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
+  max-width: 20rem;
+  margin: 0 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.qr-img {
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+.qr-content {
+  padding: 1rem; 
+}
+
+.qr-content h2 {
+  color: var(--clr-heading);
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.qr-content p {
+  color: var(--clr-paragraph);
+  font-size: var(--fs-default);
+}
