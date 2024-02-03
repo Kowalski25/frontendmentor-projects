@@ -7,7 +7,7 @@
 
 :root {
   --clr-primary-400: hsl(225, 100%, 94%); /* Pale blue */
-  --clr-primary-500: hsl(245, 75%, 52%); /* Bright blue */
+  --clr-primary-hsl-500: 245, 75%, 52%; /* Bright blue */
 
   --clr-neutral-400: hsl(0, 0%, 100%);
   --clr-neutral-500: hsl(225, 100%, 98%); /* Very pale blue */
@@ -22,7 +22,7 @@
   --fs-600: 1.25rem;
   --fs-700: 1.375rem;
   --fs-800: 1.5rem;
-  --fs-900: 2rem;
+  --fs-900: 1.75rem;
 
   --fw-regular: 400;
   --fw-medium: 500;
@@ -41,8 +41,8 @@
 }
 
 body {
-  background: url("./images/pattern-background-mobile.svg");
-  background-size: 500%;
+  background: url("./images/pattern-background-mobile.svg"), var(--clr-primary-400);
+  background-size: contain;
   background-repeat: no-repeat;
   font-family: var(--font-family-default);
   font-size: var(--fs-400);
@@ -58,8 +58,7 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 h6 {
   overflow-wrap: break-word;
 }
 
@@ -98,12 +97,12 @@ canvas {
   text-align: center;
 }
 
-.leading {
+.order-summary-content .leading {
   color: var(--clr-neutral-700);
   font-size: var(--fs-300);
   font-weight: var(--fw-medium);
   line-height: 1.6;
-  padding: 1rem;
+  padding: 1rem 1rem 1.5rem;
   text-align: center;
 }
 
@@ -113,7 +112,7 @@ canvas {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .order-summary-price {
@@ -134,11 +133,16 @@ canvas {
 }
 
 .change-btn {
-  color: var(--clr-primary-500);
+  color: hsl(var(--clr-primary-hsl-500));
   display: inline-block;
   font-size: 13px;
   font-weight: var(--fw-black);
   margin-left: auto;
+}
+
+.change-btn:hover{
+  color: hsl(var(--clr-primary-hsl-500), .7);
+  text-decoration: none;
 }
 
 .btn {
@@ -151,15 +155,44 @@ canvas {
 }
 
 .btn.payment {
-  background: var(--clr-primary-500);
-  box-shadow: 0 12px 18px rgba(56, 41, 224, .3);
+  background: hsl(var(--clr-primary-hsl-500));
+  box-shadow: 0 12px 18px rgba(56, 41, 224, 0.3);
   border-radius: 0.75rem;
   color: var(--clr-neutral-400);
   margin-bottom: 0.5rem;
 }
 
+.btn.payment:hover {
+  background: hsl(var(--clr-primary-hsl-500), .7);
+  cursor: pointer;
+}
+
 .btn.cancel {
   background: none;
   color: var(--clr-neutral-700);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-black);
+}
+
+.btn.cancel:hover {
+  color: var(--clr-neutral-800);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 760px) {
+  body {
+    background: url("./images/pattern-background-desktop.svg"), var(--clr-primary-400);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .order-summary-content {
+    padding: 3rem 3rem 1rem;
+  }
+
+  .order-summary-content h1 {
+    font-size: var(--fs-900);
+  }
+
+  .order-summary-content .leading {
+    font-size: var(--fs-400);
+  }
 }
