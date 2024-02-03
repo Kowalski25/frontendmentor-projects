@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Red Hat Display";
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("./font/RedHatDisplay-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  --clr-primary-400: hsl(225, 100%, 94%); /* Pale blue */
+  --clr-primary-500: hsl(245, 75%, 52%); /* Bright blue */
+
+  --clr-neutral-400: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsl(225, 100%, 98%); /* Very pale blue */
+  --clr-neutral-700: hsl(224, 23%, 55%); /* Desaturated blue */
+  --clr-neutral-800: hsl(223, 47%, 23%); /* Dark blue */
+
+  --font-family-default: "Red Hat Display", sans-serif;
+
+  --fs-300: calc(var(--fs-400) - 1px);
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.375rem;
+  --fs-800: 1.5rem;
+  --fs-900: 2rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background: url("./images/pattern-background-mobile.svg");
+  background-size: 500%;
+  background-repeat: no-repeat;
+  font-family: var(--font-family-default);
+  font-size: var(--fs-400);
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  -webkit-font-smoothing: antialiased; /* improve text rendering */
+}
+
+/* avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit; /* remove built-in form typography styles */
+}
+
+svg,
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.order-summary {
+  border-radius: 1rem;
+  max-width: 27.5rem;
+  margin-inline: 1.5rem;
+  overflow: hidden;
+}
+
+.order-summary-content {
+  background-color: var(--clr-neutral-400);
+  padding: 2rem 1.5rem 1rem;
+}
+
+.order-summary-content h1 {
+  color: var(--clr-neutral-800);
+  font-size: var(--fs-700);
+  font-weight: var(--fw-black);
+  text-align: center;
+}
+
+.leading {
+  color: var(--clr-neutral-700);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-medium);
+  line-height: 1.6;
+  padding: 1rem;
+  text-align: center;
+}
+
+.order-summary-plan {
+  background: var(--clr-neutral-500);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.order-summary-price {
+  margin-left: 1rem;
+}
+
+.order-summary-price h3 {
+  color: var(--clr-neutral-800);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-black);
+  margin-bottom: 3px;
+}
+
+.order-summary-price p {
+  color: var(--clr-neutral-700);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-medium);
+}
+
+.change-btn {
+  color: var(--clr-primary-500);
+  display: inline-block;
+  font-size: 13px;
+  font-weight: var(--fw-black);
+  margin-left: auto;
+}
+
+.btn {
+  border: none;
+  display: block;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-300);
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.btn.payment {
+  background: var(--clr-primary-500);
+  box-shadow: 0 12px 18px rgba(56, 41, 224, .3);
+  border-radius: 0.75rem;
+  color: var(--clr-neutral-400);
+  margin-bottom: 0.5rem;
+}
+
+.btn.cancel {
+  background: none;
+  color: var(--clr-neutral-700);
+  font-weight: var(--fw-bold);
+}
