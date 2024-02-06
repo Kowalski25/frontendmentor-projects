@@ -14,10 +14,14 @@
 
   --font-family-default: "Figtree", sans-serif;
 
+  --fs-300: calc(var(--fs-400) - 2px);
   --fs-400: 1rem;
 
-  --fs-semibold: 600;
-  --fs-extrabold: 800;
+  --fw-semibold: 600;
+  --fw-extrabold: 800;
+
+  --gen-spacing-400: 1rem;
+  --gen-spacing-500: 1.5rem;
 }
 
 *,
@@ -49,6 +53,7 @@ body {
   place-items: center;
   font-family: var(--font-family-default);
   font-size: var(--fs-400);
+  font-weight: var(--fw-semibold);
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased; /* Improve text rendering */
 }
@@ -57,12 +62,89 @@ body {
   background: var(--clr-neutral-white);
   border-radius: 1rem;
   border: 1px solid var(--clr-neutral-black);
-  max-width: 25rem;
-  margin-inline: 1.5rem;
-  padding: 1.5rem;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.9);
+  max-width: 24rem;
+  margin-inline: var(--gen-spacing-500);
+  padding: var(--gen-spacing-500);
 }
 
 .blog-img {
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   overflow: hidden;
+  margin-bottom: var(--gen-spacing-500);
+}
+
+.blog-img img {
+  max-width: 110%;
+}
+
+.blog-tag {
+  background-color: var(--clr-primary-yellow);
+  border-radius: 4px;
+  display: inline-block;
+  font-size: calc(var(--fs-300) - 2px);
+  font-weight: var(--fw-extrabold);
+  margin-bottom: 0.85rem;
+  padding: 6px 13px;
+}
+
+.blog-date {
+  font-size: calc(var(--fs-400) - 4px);
+  margin-bottom: calc(var(--gen-spacing-400) + 1px);
+}
+
+.blog-content h1 {
+  font-size: calc(var(--fs-400) * 1.25);
+  font-weight: var(--fw-extrabold);
+  margin-bottom: var(--gen-spacing-400);
+}
+
+.blog-content h1:hover {
+  color: var(--clr-primary-yellow);
+  cursor: pointer;
+}
+
+.leading {
+  color: var(--clr-neutral-grey);
+  font-size: var(--fs-300);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: var(--gen-spacing-500);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+footer img {
+  width: 2rem;
+}
+
+footer h3 {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-extrabold);
+}
+
+@media screen and (min-width: 780px) {
+  .blog-img img {
+    max-width: 100%;
+  }
+
+  .blog-tag {
+    font-size: var(--fs-300);
+  }
+
+  .blog-date {
+    font-size: calc(var(--fs-400) - 2px);
+  }
+
+  .blog-content h1 {
+    font-size: calc(var(--fs-400) * 1.52);
+  }
+
+  .leading {
+    font-size: var(--fs-400);
+  }
 }
