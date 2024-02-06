@@ -127,7 +127,7 @@ footer h3 {
   font-weight: var(--fw-extrabold);
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 700px) {
   .blog-img img {
     max-width: 100%;
   }
