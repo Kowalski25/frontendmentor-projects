@@ -1,0 +1,46 @@
+/* ## Colors
+
+### Primary
+
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+### Neutral
+
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%) */
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 98%);
+  --clr-neutral-300: hsl(229, 6%, 66%);
+  --clr-neutral-700: hsl(234, 12%, 34%);
+
+
+
+
+  --ff-default: "Poppins", sans-serif;
+
+  --fs-400: 0.9375rem; /* 15px */
+  --fs-500: 1.25rem;
+  --fs-600: 1.625rem;
+  --fs-800: 2rem;
+  --fs-900: 2.5rem;
+
+  --fw-light: 200;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
