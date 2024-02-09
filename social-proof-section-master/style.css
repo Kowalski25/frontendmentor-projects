@@ -10,11 +10,16 @@
 
   --fs-400: 0.8125rem;
   --fs-500: 0.9375em;
+  --fs-600: 1rem;
   --fs-900: 2rem;
 
   --fw-normal: 400;
   --fw-medium: 500;
   --fw-bold: 700;
+
+  --border-rad: 0.5rem;
+  --line-height: 1.5;
+  --spacing: 1rem;
 }
 
 *,
@@ -37,9 +42,9 @@ body {
   background-image: url("/images/bg-pattern-top-mobile.svg"), url("./images/bg-pattern-bottom-mobile.svg");
   background-repeat: no-repeat;
   background-position:
-    top 0 left 0,
-    bottom 0 right 0;
-  line-height: 1.5;
+    left 0 top 1,
+    right 0 bottom 0;
+  line-height: 1;
   padding-block: 5rem;
   text-align: center;
   -webkit-font-smoothing: antialiased;
@@ -58,30 +63,99 @@ h3 {
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
+.grid {
+  display: grid;
+}
+
 main {
-  max-width: 70rem;
   padding-inline: 2rem;
+  gap: 2rem;
+}
+
+.title {
   margin-inline: auto;
 }
 
-h1 {
+.title h1 {
   color: var(--clr-primary-900);
   font-size: var(--fs-900);
-  line-height: 1;
+  max-width: 12ch;
   margin-inline: auto;
   margin-bottom: 1rem;
-  max-width: 12ch;
 }
 
 .lead {
   color: var(--clr-neutral-900);
   font-weight: var(--fw-medium);
+  line-height: var(--line-height);
 }
 
-.flex {
+.ratings ul {
+  gap: 1rem;
+}
+
+.ratings li {
+  background: hsl(333, 80%, 67%, 0.1);
+  border-radius: var(--border-rad);
+  display: grid;
+  gap: 0.75rem;
+  place-items: center;
+  padding: 0.75rem 0;
+}
+
+.stars {
   display: flex;
+  gap: 0.45rem;
+}
+
+.ratings h2 {
+  color: var(--clr-primary-900);
+  font-size: var(--fs-500);
+}
+
+.testimonials {
+  text-align: left;
+  gap: var(--spacing);
+}
+
+.testimonials blockquote {
+  background: var(--clr-primary-900);
+  border-radius: var(--border-rad);
+  padding: 2rem;
+}
+
+blockquote > p {
+  color: var(--clr-neutral-500);
+  font-size: var(--fs-500);
+  line-height: var(--line-height);
+}
+
+.reviewer-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  margin-bottom: 1.5rem;
+}
+
+.testimonials img {
+  border-radius: 50%;
+  width: 2.5rem;
+}
+
+.reviewer-info > * {
+  font-size: var(--fs-500);
+}
+
+.reviewer-info h3 {
+  color: var(--clr-neutral-500);
+  padding-bottom: 0.15rem;
+}
+
+.reviewer-info p {
+  color: hsl(333, 80%, 67%, 0.7);
+  font-weight: var(--fw-medium);
 }
