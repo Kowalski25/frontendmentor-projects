@@ -1,0 +1,42 @@
+:root {
+  --clr-primary-400: hsl(30, 38%, 92%);
+  --clr-primary-900: hsl(158, 36%, 37%);
+
+  --clr-neutral-400: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsl(228, 12%, 48%);
+  --clr-neutral-900: hsl(212, 21%, 14%);
+
+  --ff-sans-serif: "Montserrat", sans-serif;
+  --ff-serif: "Fraunces", serif;
+
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
+  --fs-700: 1.5rem;
+  --fs-800: 1.75rem;
+  --fs-900: 2rem;
+
+  --fw-normal: 500;
+  --fw-bold: 700;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: var(--ff-sans-serif);
+  font-display: swap;
+  font-optical-sizing: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
