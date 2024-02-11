@@ -1,9 +1,10 @@
 :root {
-  --clr-primary-400: hsl(30, 38%, 92%);
-  --clr-primary-900: hsl(158, 36%, 37%);
+  --clr-primary-200: hsl(30, 38%, 92%);
+  --clr-primary-800: hsl(158, 36%, 37%);
+  --clr-primary-900: hsl(158, 36%, 20%);
 
-  --clr-neutral-400: hsl(0, 0%, 100%);
-  --clr-neutral-500: hsl(228, 12%, 48%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
   --clr-neutral-900: hsl(212, 21%, 14%);
 
   --ff-sans-serif: "Montserrat", sans-serif;
@@ -19,6 +20,8 @@
   --fw-bold: 700;
 }
 
+/* resets */
+
 *,
 ::before,
 ::after {
@@ -26,17 +29,146 @@
 }
 
 * {
+  font: inherit;
   margin: 0;
 }
 
-html {
-  font-family: var(--ff-sans-serif);
-  font-display: swap;
-  font-optical-sizing: auto;
-}
-
-img {
+img,
+picture,
+svg {
   display: block;
   max-width: 100%;
 }
 
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+/* general styles */
+
+body {
+  background-color: var(--clr-primary-200);
+  color: var(--clr-neutral-400);
+  display: grid;
+  place-content: center;
+  font-family: var(--ff-sans-serif);
+  font-display: swap;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-normal);
+  min-height: 100vh;
+  margin-inline: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.button {
+  background-color: var(--clr-primary-800);
+  border: 0;
+  border-radius: 0.5rem;
+  color: var(--clr-neutral-100);
+  cursor: pointer;
+  font-size: var(--fs-500);
+  font-weight: var(--fw-bold);
+  padding: 0.85rem 1.5rem;
+  /* if ever a link is embedded in the button */
+  text-decoration: none;
+
+  /* for icon positioning */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.button[data-icon="shopping-cart"]::before {
+  content: "";
+  background-image: url("./images/icon-cart.svg");
+  height: 16px;
+  width: 15px;
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--clr-primary-900);
+}
+
+/* utilities */
+
+.flex-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* for visually hidden elements intended for screen readers only. */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* product styles */
+
+.product {
+  --details-padding: 1.5rem;
+  --details-spacing: 1rem;
+
+  background: var(--clr-neutral-100);
+  border-radius: 0.5rem;
+  display: grid;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 600px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+    --details-padding: 2rem;
+  }
+}
+
+.product__details {
+  display: grid;
+  gap: var(--details-spacing);
+  padding: var(--details-padding);
+}
+
+.product__category {
+  font-size: calc(var(--fs-400) - 2px);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.product__name {
+  color: var(--clr-neutral-900);
+  font-family: var(--ff-serif);
+  font-size: var(--fs-900);
+  font-weight: var(--fw-bold);
+}
+
+.product__details p:nth-of-type(2) {
+  line-height: 1.7;
+}
+
+.product__sale-price {
+  color: var(--clr-primary-800);
+  font-family: var(--ff-serif);
+  font-size: var(--fs-900);
+  font-weight: var(--fw-bold);
+}
+
+.product__original-price {
+  text-decoration: line-through;
+}
