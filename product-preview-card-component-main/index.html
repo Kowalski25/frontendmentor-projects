@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
 
-  <title>Frontend Mentor | Product preview card component</title>
+    <title>Frontend Mentor | Product preview card component</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css">
-  
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <article class="product">
+        <picture class="product__image">
+          <source
+            srcset="/images/image-product-desktop.jpg"
+            media="(min-width: 600px)" />
+          <img
+            src="/images/image-product-mobile.jpg"
+            alt="Gabrielle Essence Eau De Parfum lying on a white surface with green leaves around it." />
+        </picture>
 
-  Perfume
+        <section class="product__details">
+          <p class="product__category">Perfume</p>
 
-  Gabrielle Essence Eau De Parfum
+          <h1 class="product__name">Gabrielle Essence Eau De Parfum</h1>
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
+          <p>
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
 
-  $149.99
-  $169.99
+          <div class="flex-group">
+            <p class="product__sale-price">
+              <!-- this is visually hidden intended for accessibility. -->
+              <span class="sr-only">Current sale price:</span>
+              $149.99
+            </p>
+            <p class="product__original-price">
+              <!-- this is visually hidden intended for accessibility. -->
+              <span class="sr-only">Original price:</span>
+              $169.99
+            </p>
+          </div>
 
-  Add to Cart
-  
-</body>
+          <button class="button" data-icon="shopping-cart" type="button">
+            Add to Cart
+          </button>
+        </section>
+      </article>
+    </main>
+  </body>
 </html>
