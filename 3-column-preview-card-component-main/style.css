@@ -1,0 +1,100 @@
+/* custom properties */
+:root {
+  --clr-primary-900: hsl(179, 100%, 13%);
+  --clr-primary-600: hsl(184, 100%, 22%);
+  --clr-primary-400: hsl(31, 77%, 52%);
+
+  /*
+    1. paragraphs
+    2. background, headings, buttons
+  */
+  --clr-neutral-100: hsl(0, 0%, 100%, 0.75);
+  --clr-neutral-200: hsl(0, 0%, 95%);
+
+  --ff-heading: "Big Shoulders Display", sans-serif;
+  --ff-base: "Lexend Deca", sans-serif;
+
+  --fs-400: 0.9375rem;
+  --fs-600: 1.25rem;
+  --fs-800: 2rem;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
+/* resets */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* general styles */
+
+body {
+  font-size: var(--fs-400);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  margin-inline: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  margin-block: 5rem;
+}
+
+h2 {
+  color: var(--clr-neutral-200);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-800);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--clr-neutral-100);
+  line-height: 1.6;
+}
+
+section {
+  display: grid;
+  gap: 2rem;
+  padding: 3.5rem;
+}
+
+/* preview card styles */
+
+.preview {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.sedan {
+  background-color: var(--clr-primary-400);
+}
+
+.suv {
+  background-color: var(--clr-primary-600);
+}
+
+.luxury {
+  background-color: var(--clr-primary-900);
+}
