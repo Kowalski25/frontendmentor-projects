@@ -1,29 +1,118 @@
 :root {
   --clr-primary-400: hsl(75, 94%, 57%);
-  
+
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-200: hsl(0, 0%, 20%);
   --clr-neutral-800: hsl(0, 0%, 12%);
   --clr-neutral-900: hsl(0, 0%, 8%);
 
-  --ff-base: 'Inter', sans-serif;
+  --ff-base: "Inter", sans-serif;
 
   --fs-400: 0.875rem;
-  --fs-500: 1rem;
-  --fs-800: 1.5rem;
-  --fs-900: 2rem;
+  --fs-800: 1.7rem;
 
   --fw-normal: 400;
   --fw-semibold: 600;
   --fw-bold: 700;
 }
 
-
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-display: swap;
   font-weight: 100 900;
-  src: url('./assets/fonts/Inter-VariableFont_slnt\,wght.ttf')
-       format('truetype');
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
 }
 
+/* resets */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2 {
+  overflow-wrap: break-word;
+}
+
+/* general styles */
+
+html {
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-semibold);
+}
+
+body {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+  display: grid;
+  line-height: 1;
+  place-items: center;
+  margin-inline: 1rem;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.social-links-profile {
+  background-color: var(--clr-neutral-800);
+  border-radius: 0.65rem;
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .social-links-profile {
+    padding: 2.5rem;
+  }
+}
+
+img {
+  border-radius: 50%;
+  margin-inline: auto;
+  width: 6rem;
+}
+
+h1 {
+  font-size: var(--fs-800);
+  line-height: 1;
+}
+
+p.location {
+  color: var(--clr-primary-400);
+  margin-bottom: 1.25rem;
+}
+
+p:last-of-type {
+  font-weight: var(--fw-normal);
+  margin-bottom: 1rem;
+}
+
+a {
+  background-color: var(--clr-neutral-200);
+  border-radius: 0.5rem;
+  color: inherit;
+  padding: 1rem 6.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+a:is(:hover, :focus) {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-800);
+  cursor: pointer;
+}
