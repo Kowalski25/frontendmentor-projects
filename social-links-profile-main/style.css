@@ -1,0 +1,29 @@
+:root {
+  --clr-primary-400: hsl(75, 94%, 57%);
+  
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 20%);
+  --clr-neutral-800: hsl(0, 0%, 12%);
+  --clr-neutral-900: hsl(0, 0%, 8%);
+
+  --ff-base: 'Inter', sans-serif;
+
+  --fs-400: 0.875rem;
+  --fs-500: 1rem;
+  --fs-800: 1.5rem;
+  --fs-900: 2rem;
+
+  --fw-normal: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./assets/fonts/Inter-VariableFont_slnt\,wght.ttf')
+       format('truetype');
+}
+
