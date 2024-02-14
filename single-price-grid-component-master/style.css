@@ -1,0 +1,21 @@
+:root {
+  --clr-primary-900: hsl(179, 62%, 43%);
+  --clr-primary-500: hsl(71, 73%, 54%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(204, 43%, 93%);
+  --clr-neutra-400: hsl(218, 22%, 67%);
+
+  --ff-base: "Karla", sans-serif;
+
+  --fs-300: 0.9375rem;
+  --fs-400: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --fs-700: 1.75rem;
+  --fs-800: 2rem;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
