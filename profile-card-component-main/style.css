@@ -1,0 +1,154 @@
+:root {
+  --clr-primary-400: hsl(227, 10%, 46%);
+  --clr-primary-600: hsl(185, 75%, 39%);
+  --clr-primary-800: hsl(229, 23%, 23%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-400: hsl(0, 0%, 59%);
+
+  --ff-base: "Kumbh Sans", sans-serif;
+
+  --fs-100: 0.6875rem;
+  --fs-200: 0.9375rem;
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-family: var(--ff-base);
+  font-display: swap;
+  font-weight: var(--fw-normal);
+}
+
+body {
+  background: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    left -10rem top -13rem,
+    right -12rem bottom -10rem;
+  background-size: 100%;
+  background-color: var(--clr-primary-600);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin-inline: 1rem;
+  text-align: center;
+}
+
+.flex-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* you can also use flex for this, but you have to give each child a flex of 1 below */
+
+  /* 
+  display: flex;
+  justify-content: space-between; 
+  */
+}
+
+.profile-card {
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6rem 3rem 3rem 1fr;
+  overflow: hidden;
+}
+
+.banner {
+  grid-row: 1 / 3;
+  grid-column: 1/-1;
+}
+
+.banner img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.profile-picture {
+  grid-row: 2/4;
+  grid-column: 1/-1;
+  margin-inline: auto;
+  z-index: 1;
+}
+
+.profile-picture img {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 5px solid var(--clr-neutral-100);
+}
+
+.content {
+  grid-row: 4/6;
+}
+
+.details {
+  padding: 2rem 2rem 1rem;
+}
+
+.details h1 {
+  font-size: var(--fs-400);
+  margin-bottom: 0.5rem;
+}
+
+.details span {
+  color: var(--clr-neutral-400);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-normal);
+  padding-left: 0.25rem;
+}
+
+.details .location {
+  color: var(--clr-neutral-400);
+  font-size: var(--fs-200);
+}
+
+.stats {
+  border-top: 1px solid hsl(0, 0%, 85%);
+  padding: 1.5rem;
+}
+
+/*
+.stats > div {
+  flex: 1;
+}
+*/
+
+.stats-count {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.25rem;
+}
+
+.stats-name {
+  color: var(--clr-neutral-400);
+  font-size: var(--fs-100);
+  letter-spacing: 1px;
+}
