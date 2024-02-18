@@ -1,0 +1,60 @@
+:root {
+  --clr-primary-900: hsl(257, 40%, 49%);
+  --clr-primary-600: hsl(300, 69%, 71%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-primary: "Poppins", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 2rem;
+
+  --fw-normal: 400;
+  --fw-bold: 600;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+p,
+h1,
+h2 {
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+html {
+  font-family: var(--ff-primary);
+  font-display: swap;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-normal);
+}
+
+body {
+  background: url('./images/bg-mobile.svg') no-repeat;
+  -webkit-font-rendering: antialiased;
+}
+
+.grid-flow {
+  display: grid;
+}
