@@ -1,33 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Article preview component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
 
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <title>Frontend Mentor | Article preview component</title>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet" />
 
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="article-preview">
+        <div class="article-preview-img"></div>
 
-  Michelle Appleton
-  28 Jun 2020
+        <div class="article-preview-content">
+          <h1 class="article-preview-title">
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h1>
+          <p class="article-preview-text">
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I’ve got some simple tips to help
+            you make any room feel complete.
+          </p>
+        </div>
+          
+          <div class="article-author-section">
+            <div class="article-author-details">
+              <img
+                class="author-img"
+                src="/images/avatar-michelle.jpg"
+                alt="Michelle Appleton display picture" />
+              <div>
+                <p class="author-name">Michelle Appleton</p>
+                <p class="publish-date">28 Jun 2020</p>
+              </div>
+              <button class="button">
+                <img src="/images/icon-share.svg" alt="" />
+              </button>
+            </div>
 
-  Share
-  
-</body>
+            <div class="social-share">
+              <p>share</p>
+              <div class="social-share-links">
+                <img src="/images/icon-facebook.svg" alt="" />
+                <img src="/images/icon-twitter.svg" alt="" />
+                <img src="/images/icon-pinterest.svg" alt="" />
+              </div>
+            </div>
+          </div>
+      </div>
+    </main>
+  </body>
 </html>
