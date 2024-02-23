@@ -1,0 +1,140 @@
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-blue-100: hsl(210, 46%, 95%);
+  --clr-blue-400: hsl(212, 23%, 69%);
+  --clr-blue-600: hsl(214, 17%, 51%);
+  --clr-blue-800: hsl(217, 19%, 35%);
+
+  --ff-base: "Manrope", sans-serif;
+
+  --fs-400: 0.8125rem; /* 13px */
+
+  --fw-normal: 500;
+  --fw-bold: 700;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  font-display: swap;
+}
+
+p,
+h1,
+h2 {
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--clr-blue-100);
+  min-height: 100dvh;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.button {
+  background-color: var(--clr-blue-100);
+  border: none;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  font: inherit;
+  margin-left: auto;
+  padding: 0.65rem;
+  outline: none;
+  z-index: 5;
+}
+
+.article-preview {
+  background-color: var(--clr-white);
+  border-radius: 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 225px 1fr;
+  margin-inline: 1.5rem;
+  max-width: 720px;
+  overflow: hidden;
+}
+
+.article-preview-img {
+  background: url("images/drawers.jpg") no-repeat;
+  background-size: cover;
+  /* background-position: center; */
+}
+
+.article-preview-content {
+  background-color: lightblue;
+  padding: 3rem 2.5rem 1.5rem;
+}
+
+.article-preview-title {
+  color: var(--clr-blue-800);
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.article-preview-text {
+  color: var(--clr-blue-600);
+  font-weight: var(--fw-normal);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.article-author-section {
+  background-color: skyblue;
+  position: relative;
+}
+
+.article-author-details {
+  display: flex;
+  align-items: center;
+}
+
+.author-img {
+  border-radius: 50%;
+  max-width: 3rem;
+  margin-right: 1rem;
+}
+
+.author-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.publish-date {
+  color: var(--clr-blue-600);
+}
+
+.social-share {
+  background-color: skyblue;
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.social-share-links {
+  display: flex;
+}
