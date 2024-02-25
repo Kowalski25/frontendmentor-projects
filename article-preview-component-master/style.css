@@ -57,7 +57,8 @@ body {
   cursor: pointer;
   font: inherit;
   margin-left: auto;
-  padding: 0.65rem;
+  /* margin-top: 0.25rem; */
+  padding: 0.5rem;
   outline: none;
   z-index: 5;
 }
@@ -80,7 +81,7 @@ body {
 }
 
 .article-preview-content {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   padding: 3rem 2.5rem 1.5rem;
 }
 
@@ -96,11 +97,10 @@ body {
   color: var(--clr-blue-600);
   font-weight: var(--fw-normal);
   line-height: 1.6;
-  margin-bottom: 2rem;
 }
 
 .article-author-section {
-  background-color: skyblue;
+  padding: 1rem 2.5rem 1rem;
   position: relative;
 }
 
@@ -115,9 +115,14 @@ body {
   margin-right: 1rem;
 }
 
+.author-wrapper {
+  margin-block: auto;
+}
+
 .author-name {
+  color: var(--clr-blue-800);
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .publish-date {
@@ -125,16 +130,27 @@ body {
 }
 
 .social-share {
-  background-color: skyblue;
+  background-color: var(--clr-blue-800);
   display: none;
+  gap: 1.5rem;
   align-items: center;
   position: absolute;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
+  padding-left: 2.5rem;
+  overflow: hidden;
+}
+
+.social-share p {
+  color: var(--clr-blue-400);
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .social-share-links {
   display: flex;
+  gap: 1rem;
 }
