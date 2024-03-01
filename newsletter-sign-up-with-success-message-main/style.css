@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("./assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+:root {
+  --clr-primary-900: hsl(4, 100%, 67%);
+
+  --clr-neutral-900: hsl(234, 29%, 20%);
+  --clr-neutral-700: hsl(235, 18%, 26%);
+  --clr-neutral-400: hsl(231, 7%, 60%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-regular: "Roboto-Regular", sans-serif;
+  --ff-bold: "Roboto-Bold", sans-serif;
+
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 1.75rem;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2 {
+  overflow-wrap: break-word;
+}
+
+ul {
+  padding: 0;
+}
+
+html {
+  font-family: var(--ff-regular);
+}
+
+body {
+
+}
+
+.flex {
+  display: flex;
+}
+
+.signup-form-card {
+}
+
+.illustration {
+  background: url("./assets/images/illustration-sign-up-mobile.svg") no-repeat;
+  min-height: 285px;
+}
+
+.content {
+}
