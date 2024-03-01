@@ -1,45 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
 
-  <link rel="stylesheet" href="style.css">
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
 
-  <script src="app.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Sign-up form start -->
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- Sign-up form start -->
+      <div class="signup-form-card">
+        <div class="illustration">
+        </div>
 
-  Stay updated!
+        <div class="content">
+          <h1 class="title">Stay updated!</h1>
+          <p class="lead">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="update-list">
+            <li class="flex">
+              <img src="/assets/images/icon-list.svg" />
+              <span>Product discovery and building what matters</span>
+            </li>
+            <li class="flex">
+              <img src="/assets/images/icon-list.svg" />
+              <span>Measuring to ensure updates are a success</span>
+            </li>
+            <li class="flex">
+              <img src="/assets/images/icon-list.svg" />
+              <span>And much more!</span>
+            </li>
+          </ul>
 
-  Join 60,000+ product managers receiving monthly updates on:
+          <form>
+            <div class="form-control">
+              <div class="input-message flex">
+                <label for="email">Email address</label>
+                <span class="error-message">Valid email required</span>
+              </div>
+              <input type="text" placeholder="email@company.com" id="email" />
+            </div>
+            <button class="subscribe button">Subscribe to monthly newsletter</button>
+          </form>
+        </div>
+      </div>
+      <!-- Sign-up form end -->
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-</body>
+      <!-- Success message start -->
+      <div class="success-card">
+        <img src="/assets/images/icon-success.svg" />
+        <h2 class="title">Thanks for subscribing!</h2> 
+        <p class="success-msg">
+          A confirmation email has been sent to
+          <span>ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription. 
+          <button class="dismiss button">Dismiss message</button>
+        </p>
+      </div>
+      <!-- Success message end -->
+    </main>
+  </body>
 </html>
