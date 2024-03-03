@@ -10,6 +10,7 @@
 
 :root {
   --clr-primary-900: hsl(4, 100%, 67%);
+  --clr-primary-hsl-900: 4, 100%, 67%;
 
   --clr-neutral-900: hsl(234, 29%, 20%);
   --clr-neutral-700: hsl(235, 18%, 26%);
@@ -23,7 +24,11 @@
   --fs-500: 1.125rem;
   --fs-600: 1.25rem;
   --fs-700: 1.5rem;
-  --fs-800: 1.75rem;
+  --fs-800: 2rem;
+  --fs-900: 2.5rem;
+
+  --border-rad: 2rem;
+  --gen-spacing-400: 1rem;
 }
 
 *,
@@ -54,28 +59,211 @@ h2 {
 }
 
 ul {
+  list-style-type: none;
   padding: 0;
 }
+
+/* general styles */
 
 html {
   font-family: var(--ff-regular);
 }
 
 body {
+  background-color: var(--clr-neutral-700);
+  color: var(--clr-neutral-900);
+  display: grid;
+  font-size: var(--fs-400);
+  line-height: 1.5;
+  min-height: 100vh;
+  align-items: center;
+}
 
+input,
+button {
+  border-radius: 0.5rem;
+  font: inherit;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
 }
 
 .flex {
   display: flex;
 }
 
+.button {
+  background-color: var(--clr-neutral-900);
+  border: none;
+  color: var(--clr-neutral-100);
+  cursor: pointer;
+  font-family: var(--ff-bold);
+  padding: var(--gen-spacing-400) 0;
+  outline: none;
+}
+
+.button:active,
+.button:hover {
+  background-image: linear-gradient(45deg, hsl(346, 100%, 66%), hsl(15, 98%, 60%));
+  box-shadow: 0 16px 48px -10px var(--clr-primary-900);
+}
+
+/* Sign-up form styles */
 .signup-form-card {
+  display: grid;
+  background-color: var(--clr-neutral-100);
+  max-width: 928px;
+  margin-inline: auto;
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    padding-inline: 1rem;
+  }
+
+  .signup-form-card {
+    border-radius: var(--border-rad);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .signup-form-card .illustration {
+    background-image: url("/assets/images/illustration-sign-up-desktop.svg");
+    background-position: center;
+    border-radius: 1rem;
+    margin: 1.5rem;
+    order: 1;
+  }
+
+  .signup-form-card .content {
+    grid-template-rows: repeat(3, min-content);
+    padding: 6rem 2rem 5rem 3.5rem;
+    place-content: center;
+    order: -1;
+  }
+
+  .signup-form-card .title {
+    font-size: calc(var(--fs-900) * 1.4);
+    margin-bottom: 2rem;
+  }
 }
 
 .illustration {
   background: url("./assets/images/illustration-sign-up-mobile.svg") no-repeat;
+  background-size: cover;
+  border-bottom-left-radius: var(--gen-spacing-400);
+  border-bottom-right-radius: var(--gen-spacing-400);
   min-height: 285px;
 }
 
 .content {
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+}
+
+.title {
+  color: var(--clr-neutral-900);
+  font-family: var(--ff-bold);
+  font-size: var(--fs-900);
+  margin-bottom: 0.75rem;
+}
+
+.update-list {
+  gap: 0.5rem;
+  margin-bottom: var(--gen-spacing-400);
+}
+
+.update-list li {
+  gap: var(--gen-spacing-400);
+}
+
+.update-list li img {
+  align-self: baseline;
+}
+
+.input-message-wrapper {
+  font-family: var(--ff-bold);
+  font-size: calc(var(--fs-400) - 3px);
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.error-message {
+  color: var(--clr-primary-900);
+  /* visibility: hidden; */
+}
+
+.email-input {
+  border: 1px solid var(--clr-neutral-400);
+  margin-bottom: 1.25rem;
+  padding: 0.85rem;
+}
+
+.email-input:focus {
+  border: 1px solid var(--clr-neutral-900);
+}
+
+.email-input.error {
+  background-color: hsl(var(--clr-primary-hsl-900), 0.15);
+  border: 1px solid var(--clr-primary-900);
+  color: var(--clr-primary-900);
+  outline: none;
+}
+
+.email-input.error::placeholder {
+  color: var(--clr-primary-900);
+}
+
+/* Success card styles */
+.success-card {
+  background-color: var(--clr-neutral-100);
+  display: none;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  grid-template-rows: 6rem auto max-content;
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    justify-content: center;
+  }
+
+  .success-card {
+    border-radius: var(--border-rad);
+    grid-template-rows: auto max-content;
+    min-height: 0;
+    max-width: 500px;
+    padding: 4rem;
+  }
+
+  .success-msg-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: calc(var(--fs-900) * 1.4);
+  }
+}
+
+.success-msg-wrapper {
+  grid-row: 2 / 3;
+}
+
+.success-icon {
+  margin-bottom: 2rem;
+}
+
+.title {
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--clr-neutral-900);
+  font-family: var(--ff-bold);
+}
+
+.dismiss {
+  grid-row: 3 / 4;
 }
