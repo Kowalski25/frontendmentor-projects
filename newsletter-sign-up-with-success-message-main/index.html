@@ -26,7 +26,7 @@
         <div class="illustration"></div>
 
         <div class="content grid">
-          <div>
+          <div class="content-header">
             <h1 class="title">Stay updated!</h1>
             <p class="lead">
               Join 60,000+ product managers receiving monthly updates on:
@@ -51,16 +51,18 @@
             <div class="form-control">
               <div class="input-message-wrapper flex">
                 <label for="email">Email address</label>
-                <span class="error-message">Valid email required</span>
+                <span class="error-message inactive">Valid email required</span>
               </div>
 
               <input
-                class="email-input error"
+                class="email-input"
                 type="text"
                 placeholder="email@company.com"
-                d="email" />
+                id="email"
+                autocomplete="off"
+              />
             </div>
-            <button class="subscribe button">
+            <button class="subscribe button" type="submit">
               Subscribe to monthly newsletter
             </button>
           </form>
@@ -69,7 +71,7 @@
       <!-- Sign-up form end -->
 
       <!-- Success message start -->
-      <div class="success-card grid">
+      <div class="success-card inactive">
         <div class="success-msg-wrapper">
           <img src="/assets/images/icon-success.svg" class="success-icon" />
           <h2 class="title">Thanks for subscribing!</h2>

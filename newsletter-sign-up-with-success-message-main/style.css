@@ -27,10 +27,24 @@
   --fs-800: 2rem;
   --fs-900: 2.5rem;
 
+  --border-rad-200: 0.5rem;
   --border-rad: 2rem;
+
+  --br-200: 0.5rem;
+  --br-400: 1rem;
+  --br-600: 2rem;
+
+  /* 
+    * General utils values for padding, margin, gaps, etc.
+  */
+  --gen-spacing-200: 0.5rem;
+  --gen-spacing-300: 0.75rem;
   --gen-spacing-400: 1rem;
+  --gen-spacing-500: 1.5rem;
+  --gen-spacing-700: 2rem;
 }
 
+/* Resets */
 *,
 ::before,
 ::after {
@@ -63,8 +77,7 @@ ul {
   padding: 0;
 }
 
-/* general styles */
-
+/* General styles & utils */
 html {
   font-family: var(--ff-regular);
 }
@@ -75,13 +88,11 @@ body {
   display: grid;
   font-size: var(--fs-400);
   line-height: 1.5;
-  min-height: 100vh;
-  align-items: center;
 }
 
 input,
 button {
-  border-radius: 0.5rem;
+  border-radius: var(--border-rad-200);
   font: inherit;
   width: 100%;
 }
@@ -94,6 +105,10 @@ button {
   display: flex;
 }
 
+.inactive {
+  display: none;
+}
+
 .button {
   background-color: var(--clr-neutral-900);
   border: none;
@@ -102,6 +117,7 @@ button {
   font-family: var(--ff-bold);
   padding: var(--gen-spacing-400) 0;
   outline: none;
+  transition: 200ms ease-in-out;
 }
 
 .button:active,
@@ -112,40 +128,52 @@ button {
 
 /* Sign-up form styles */
 .signup-form-card {
-  display: grid;
   background-color: var(--clr-neutral-100);
   max-width: 928px;
   margin-inline: auto;
+  min-height: 100vh;
 }
 
 @media screen and (min-width: 700px) {
+  body {
+    align-items: center;
+  }
+
   main {
-    padding-inline: 1rem;
+    padding-inline: var(--gen-spacing-400);
   }
 
   .signup-form-card {
     border-radius: var(--border-rad);
     grid-template-columns: 1fr 1fr;
+    min-height: 0;
   }
 
   .signup-form-card .illustration {
     background-image: url("/assets/images/illustration-sign-up-desktop.svg");
     background-position: center;
-    border-radius: 1rem;
-    margin: 1.5rem;
+    border-radius: var(--br-400);
+    margin: var(--gen-spacing-500);
     order: 1;
   }
 
   .signup-form-card .content {
     grid-template-rows: repeat(3, min-content);
-    padding: 6rem 2rem 5rem 3.5rem;
+    padding: 5.5rem 2rem 5rem 3.5rem;
+    gap: var(--gen-spacing-500);
     place-content: center;
-    order: -1;
+
+    /* Place the content section in the left side */
+    order: -1; 
   }
 
   .signup-form-card .title {
     font-size: calc(var(--fs-900) * 1.4);
-    margin-bottom: 2rem;
+    margin-bottom: var(--gen-spacing-400);
+  }
+  
+  .content .update-list {
+    gap: var(--gen-spacing-300);
   }
 }
 
@@ -158,19 +186,19 @@ button {
 }
 
 .content {
-  gap: 1.5rem;
-  padding: 2rem 1.5rem;
+  gap: var(--gen-spacing-400);
+  padding: var(--gen-spacing-700) var(--gen-spacing-500);
 }
 
 .title {
   color: var(--clr-neutral-900);
   font-family: var(--ff-bold);
   font-size: var(--fs-900);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--gen-spacing-300);
 }
 
 .update-list {
-  gap: 0.5rem;
+  gap: var(--gen-spacing-200);
   margin-bottom: var(--gen-spacing-400);
 }
 
@@ -186,18 +214,17 @@ button {
   font-family: var(--ff-bold);
   font-size: calc(var(--fs-400) - 3px);
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--gen-spacing-200);
 }
 
 .error-message {
   color: var(--clr-primary-900);
-  /* visibility: hidden; */
 }
 
 .email-input {
   border: 1px solid var(--clr-neutral-400);
-  margin-bottom: 1.25rem;
-  padding: 0.85rem;
+  margin-bottom: var(--gen-spacing-500);
+  padding: var(--gen-spacing-400) var(--gen-spacing-500);
 }
 
 .email-input:focus {
@@ -218,11 +245,11 @@ button {
 /* Success card styles */
 .success-card {
   background-color: var(--clr-neutral-100);
-  display: none;
   min-height: 100vh;
-  padding: 2rem 1.5rem;
+  padding: var(--gen-spacing-700) var(--gen-spacing-500);
   grid-template-rows: 6rem auto max-content;
 }
+
 
 @media screen and (min-width: 720px) {
   body {
@@ -234,11 +261,11 @@ button {
     grid-template-rows: auto max-content;
     min-height: 0;
     max-width: 500px;
-    padding: 4rem;
+    padding: calc(var(--gen-spacing-700) * 2);
   }
 
   .success-msg-wrapper {
-    margin-bottom: 2rem;
+    margin-bottom: var(--gen-spacing-700);
   }
 
   .title {
@@ -251,12 +278,12 @@ button {
 }
 
 .success-icon {
-  margin-bottom: 2rem;
+  margin-bottom: var(--gen-spacing-700);
 }
 
 .title {
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: var(--gen-spacing-400);
 }
 
 .accent {
