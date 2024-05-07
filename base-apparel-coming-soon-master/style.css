@@ -1,0 +1,243 @@
+:root {
+  --clr-primary-desaturated-red: hsl(0, 36%, 70%);
+  --clr-primary-desaturated-red-hsl: 0, 36%, 70%;
+
+  --clr-primary-soft-red: hsl(0, 93%, 68%);
+  --clr-neutral-dark-grayish-red: hsl(0, 6%, 24%);
+  --clr-bg-gradient-100: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --clr-bg-gradient-400: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+  --ff-base: "Josefin Sans", sans-serif;
+  --fs-100: 0.5rem;
+  --fs-200: 0.8125rem;
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-900: 2.5rem;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+
+  --spacing-100: 0.25rem;
+  --spacing-200: 0.5rem;
+  --spacing-300: 0.875rem;
+  --spacing-400: 1rem;
+  --spacing-500: 1.125rem;
+  --spacing-600: 1.25rem;
+  --spacing-700: 1.5rem;
+  --spacing-800: 1.875rem;
+  --spacing-900: 2rem;
+
+  --br: 1.5rem;
+  --br-500: 1.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+}
+
+body,
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+body {
+  background: var(--clr-bg-gradient-100);
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.inactive {
+  display: none;
+}
+
+.base-apparel-coming-soon {
+  grid-template-rows: repeat(3, auto);
+}
+
+header {
+  padding: var(--spacing-900);
+}
+
+.header-logo {
+  max-width: 6.2rem;
+}
+
+.hero {
+  grid-row: 2/3;
+}
+
+.content {
+  gap: var(--spacing-400);
+  padding: calc(var(--spacing-900) * 2) var(--spacing-900);
+  text-align: center;
+}
+
+.content-title {
+  font-size: var(--fs-900);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--spacing-400);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.content-title span {
+  color: var(--clr-primary-desaturated-red);
+  font-weight: var(--fw-light);
+}
+
+.content-lead {
+  color: var(--clr-primary-desaturated-red);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  padding-bottom: var(--spacing-300);
+}
+
+.content-form {
+  gap: var(--spacing-200);
+}
+
+.input-error {
+  gap: var(--spacing-200);
+}
+
+.error-text {
+  color: var(--clr-primary-soft-red);
+  font-size: var(--fs-200);
+  padding-top: 1px; /* To vertically align relative to the icon since align-item doesnt work. */
+}
+
+.error-icon {
+  height: var(--fs-200);
+  width: var(--fs-200);
+}
+
+.input-wrapper {
+  border-radius: var(--br);
+  position: relative;
+}
+
+.input {
+  background: transparent;
+  border: 1px solid hsl(var(--clr-primary-desaturated-red-hsl), 0.6);
+  border-radius: var(--br);
+  font-size: var(--fs-300);
+  width: 100%;
+  padding: var(--spacing-500) var(--spacing-700) var(--spacing-400);
+}
+
+.input::placeholder {
+  color: hsl(var(--clr-primary-desaturated-red-hsl), 0.6);
+}
+
+.input.error {
+  border-color: var(--clr-primary-soft-red);
+  outline-color: var(--clr-primary-soft-red);
+}
+
+.btn {
+  background-image: var(--clr-bg-gradient-400);
+  border-radius: var(--br);
+  box-shadow: 0px 15px 20px hsla(0 44% 60% / 0.248);
+  padding: 0 var(--spacing-700);
+  position: absolute;
+  right: -1px;
+  height: 100%;
+}
+
+.btn:is(:hover, :active) {
+  background: hsl(0, 52%, 67%);
+}
+
+/*
+  * This is just responsive to 375px below up to 475px, and 1120px and above.
+  * Feel free to add more breakpoints styles :)
+*/
+
+@media (min-width: 70rem) {
+  .base-apparel-coming-soon {
+    background: url('images/bg-pattern-desktop.svg') no-repeat;
+    background-repeat: repeat-x;
+    background-size: calc(100% - 610px) 100%;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+  }
+
+  header {
+    grid-row: 1/2;
+  }
+
+  header .header-logo {
+    margin: 2.125rem 0 2.5rem 8.3685rem;
+    max-width: 9.875rem;
+  }
+
+  .hero {
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+
+  .content {
+    grid-column: 1/2;
+    text-align: left;
+    margin-left: 8.3685rem ;
+    max-width: 36.5rem;
+    gap: var(--spacing-800);
+  }
+
+  .content-title {
+    font-size: calc(var(--fs-900) * 1.6);
+  }
+
+  .content-lead {
+    font-size: var(--fs-400);
+  }
+
+  .input {
+    border-radius: var(--br-500);
+    font-size: var(--fs-400);
+    padding: var(--spacing-600) var(--spacing-800) var(--spacing-500);
+  }
+
+  .btn {
+    border-radius: var(--br-500);
+    padding: 0 44px;
+  }
+}
