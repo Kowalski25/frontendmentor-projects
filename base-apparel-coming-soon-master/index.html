@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="base-apparel-coming-soon grid">
+      <picture class="hero">
+        <source srcset="images/hero-desktop.jpg" media="(min-width: 728px)" />
+        <source srcset="images/hero-tablet.jpg" media="(min-width: 379px)" />
+
+        <img src="images/hero-mobile.jpg" alt="Woman model posing" />
+      </picture>
+
+      <header>
+        <img
+          src="images/logo.svg"
+          class="header-logo"
+          alt="Base Apparel brand name as logo" />
+      </header>
+
+      <div class="content grid">
+        <h1 class="content-title"><span>We're<br/></span>coming<br/>soon<br/></h1>
+        <p class="content-lead">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+
+        <form class="content-form grid">
+          <div class="input-error inactive">
+            <img class="error-icon" src="images/icon-error.svg" />
+            <span class="error-text">Kindly enter a valid email address</span>
+          </div>
+          <div class="input-wrapper flex">
+            <input class="input" type="text" placeholder="Email Address" />
+            <button class="btn" type="submit" aria-label="Submit email">
+              <img src="images/icon-arrow.svg" />
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
