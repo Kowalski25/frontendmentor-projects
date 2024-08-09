@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- displays site properly based on user's device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Felix Arhel" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <main>
+      <form class="contact-form" action="">
+        <h1 class="contact-form__title">Contact Us</h1>
+
+        <div class="contact-form__input-wrapper">
+          <div class="contact-form__input-group">
+            <label class="contact-form__label" for="first-name">
+              First Name
+              <span class="required-asterisk">*</span>
+            </label>
+            <input
+              class="contact-form__input"
+              type="text"
+              name="first-name"
+              id="first-name" />
+            <span class="contact-form__error">This field is required</span>
+          </div>
+          <div class="contact-form__input-group">
+            <label class="contact-form__label" for="last-name"
+              >Last Name
+              <span class="required-asterisk">*</span>
+            </label>
+            <input
+              class="contact-form__input"
+              type="text"
+              name="last-name"
+              id="last-name" />
+            <span class="contact-form__error">This field is required</span>
+          </div>
+        </div>
+
+        <div class="contact-form__input-group">
+          <label class="contact-form__label" for="email">
+            Email Address
+            <span class="required-asterisk">*</span>
+          </label>
+          <input
+            class="contact-form__input"
+            type="email"
+            name="email"
+            id="email" />
+          <span class="contact-form__error">
+            Please enter a valid email address
+          </span>
+        </div>
+
+        <div class="contact-form__input-group">
+          <p class="contact-form__label">
+            Query Type
+            <span class="required-asterisk">*</span>
+          </p>
+          <div class="contact-form__input-wrapper">
+            <div class="contact-form__input | flex">
+              <input
+                class="align-center"
+                type="radio"
+                name="querytype"
+                id="querytype1"
+                value="general-inquiry" />
+              <label class="" for="querytype1">General Enquiry</label>
+            </div>
+            <div class="contact-form__input | flex">
+              <input
+                type="radio"
+                name="querytype"
+                id="querytype2"
+                value="support-request" />
+              <label for="querytype2" class="radio-btn">Support Request</label>
+            </div>
+          </div>
+          <span class="contact-form__error">Please select a query type</span>
+        </div>
+
+        <div class="contact-form__input-group">
+          <label class="contact-form__label" for="message">
+            Message
+            <span class="required-asterisk">*</span>
+          </label>
+          <textarea
+            class="contact-form__input"
+            name="message"
+            id="message"></textarea>
+          <span class="contact-form__error">This field is required</span>
+        </div>
+
+        <div class="flex">
+          <input
+            class="contact-form__input"
+            type="checkbox"
+            name="consent"
+            id="consent" />
+          <label class="contact-form__label" for="consent">
+            I consent to being contacted by the team.
+            <span class="required-asterisk" style="margin-left: 0">*</span>
+          </label>
+        </div>
+        <button class="contact-form__submit-btn" type="submit">Submit</button>
+
+        <div class="form-success-message">
+          Message Sent! Thanks for completing the form. We'll be in touch soon!
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
