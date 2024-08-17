@@ -32,7 +32,7 @@
 
   /* neutral */
   --neutral-white: 0, 0%, 100%;
-  --netraul-pale-blue: hsl(221, 100%, 96%);
+  --neutral-pale-blue: hsl(221, 100%, 96%);
   --neutral-light-lavender: hsl(241, 100%, 89%);
   --neutral-dark-gray-blue: 224, 30%, 27%; /* only used the color value but not wrapped in hsl for better control of transparency */
 
@@ -59,8 +59,8 @@
 }
 
 *,
-::before,
-::after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
