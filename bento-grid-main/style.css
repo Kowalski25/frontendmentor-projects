@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "DMSans";
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("./assets/fonts/DMSans-VariableFont_opsz\,wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DMSansItalic";
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("./assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf") format("truetype");
+}
+
+:root {
+  --br-400: 0.5rem;
+
+  --clr-primary-purple-100: hsl(254, 88%, 90%);
+  --clr-primary-purple-500: hsl(256, 67%, 59%);
+  --clr-primary-yellow-100: hsl(31, 66%, 93%);
+  --clr-primary-yellow-500: hsl(39, 100%, 71%);
+
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  --clr-neutral-black: hsl(0, 0%, 7%);
+  --clr-neutral-gray-200: hsl(0, 0%, 95%);
+
+  --ff-base: "DMSans", sans-serif;
+  --ff-accent: "DMSansItalic", sans-serif;
+
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.35rem;
+  --fs-600: 1.625rem;
+  --fs-700: 1.875rem;
+  --fs-800: 2.25rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --gen-spacing-100: 0.25rem;
+  --gen-spacing-200: 0.5rem;
+  --gen-spacing-300: 0.75rem;
+  --gen-spacing-400: 1rem;
+  --gen-spacing-500: 1.25rem;
+  --gen-spacing-600: 1.5rem;
+  --gen-spacing-700: 2rem;
+  --gen-spacing-800: 2.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--clr-neutral-gray-200);
+  font-family: var(--ff-base);
+  line-height: 1.5;
+  padding: var(--gen-spacing-400);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  line-height: 1;
+}
+
+/* Utilities */
+.bg-white {
+  background-color: var(--clr-neutral-white);
+}
+
+.bg-purple-500 {
+  background-color: var(--clr-primary-purple-500);
+}
+
+.bg-purple-100 {
+  background-color: var(--clr-primary-purple-100);
+}
+
+.bg-yellow-500 {
+  background-color: var(--clr-primary-yellow-500);
+}
+
+.bg-yellow-100 {
+  background-color: var(--clr-primary-yellow-100);
+}
+
+.accent-purple {
+  color: var(--clr-primary-purple-500);
+}
+
+.accent-yellow {
+  color: var(--clr-primary-yellow-500);
+}
+
+.italic {
+  font-family: var(--ff-accent);
+}
+
+.bento-grid {
+  display: grid;
+  gap: var(--gen-spacing-600);
+  margin: var(--gen-spacing-100);
+}
+
+.grid-item {
+  border-radius: var(--br-400);
+  display: grid;
+}
+
+.grid-item h2 {
+  font-size: var(--fs-500);
+}
+
+.multiple-platforms,
+.consistent-schedule {
+  padding: var(--gen-spacing-400);
+}
+
+.five-star-reviews {
+  color: var(--clr-neutral-white);
+  padding: var(--gen-spacing-700);
+  text-align: center;
+}
+
+.five-star-reviews h1 {
+  font-size: var(--fs-800);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--gen-spacing-400);
+}
+
+.five-star-reviews img {
+  margin-inline: auto;
+  width: 10rem;
+}
+
+.multiple-platforms img {
+  margin-bottom: var(--gen-spacing-200);
+}
+
+.consistent-schedule {
+  height: 13rem;
+  overflow: hidden;
+}
+
+.consistent-schedule h2 {
+  margin-bottom: var(--gen-spacing-400);
+}
+
+.consistent-schedule img {
+  width: 12.5rem;
+}
